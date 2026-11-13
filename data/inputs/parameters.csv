@@ -1,0 +1,42 @@
+name,value,unit,description,source
+households,75,-,Households on the studied LV feeder,Gupta and Akhtar (2027) poster; UKPN open data
+p_max_kw,100.9,kW,Firm limit of the constrained feeder (500 kVA / 4 feeders x 0.95 pf x 0.85 winter derate),Gupta and Akhtar (2027) poster
+background_peak_kw,72.0,kW,Non-EV feeder peak in the constrained (winter) case,Gupta and Akhtar (2027) poster
+background_day_cv,0.10,-,Coefficient of variation of the lognormal day factor on background load,Gupta and Akhtar (2027) poster
+background_slot_cv,0.0115,-,Coefficient of variation of half-hourly background noise (0.10/sqrt(75)),Gupta and Akhtar (2027) poster
+charger_kw,7.4,kW,Home charger rating (32 A single phase),Standard UK home charger
+charger_min_kw,1.4,kW,Lowest modulated charging power (6 A x 230 V),IEC 61851 minimum current
+efficiency,0.92,-,Charging efficiency,Gupta and Akhtar (2027) poster
+consumption_kwh_per_100km,18,kWh/100km,Specific consumption of a battery EV,Gupta and Akhtar (2027) poster
+battery_kwh,60,kWh,Usable battery capacity (cap on energy per session),Assumption
+sessions_per_vehicle_day,0.214,1/day,Mean home-charging sessions per vehicle per day (k),Gupta and Akhtar (2027) poster; DfT/GLA fleet data
+mileage_mean_km_day,39.24,km/day,Mean daily distance (8900 miles/year battery-EV mean),DfT National Travel Survey 2024 (NTS0901/NTS0904)
+mileage_sigma,0.728,-,Lognormal shape of daily distance fitted to NTS mileage bands (R2 = 0.86),DfT National Travel Survey 2024
+soc_median,0.291,-,Median arrival state of charge (log-space blend of a published lognormal and the DfT survey median of 24%),Gupta and Akhtar (2027) poster; DfT EV driver survey 2022
+soc_sigma,0.477,-,Lognormal shape of arrival state of charge (gives a mean of 32.6%),Gupta and Akhtar (2027) poster
+departure_mean_h,7.5,h,Mean next-morning departure time for evening and overnight arrivals,Assumption
+departure_sd_h,1.0,h,Standard deviation of next-morning departure time,Assumption
+daytime_dwell_min_h,3.0,h,Shortest dwell for daytime (04:00-14:00) plug-ins,Assumption
+daytime_dwell_max_h,8.0,h,Longest dwell for daytime (04:00-14:00) plug-ins,Assumption
+go_offpeak_p,7.5,p/kWh,Static ToU off-peak rate 00:30-05:30 (Octopus Go structure),Octopus Energy
+go_peak_p,25.0,p/kWh,Static ToU rate outside the off-peak window,Octopus Energy
+flat_p,26.11,p/kWh,Flat rate (default tariff cap) for uncontrolled charging,Ofgem price cap
+agile_multiplier,2.2,-,Agile retail price = multiplier x wholesale + adder,Octopus Energy
+agile_offset_p,-3.5,p/kWh,Agile constant adder,Gupta and Akhtar (2027) poster
+agile_peak_adder_p,12.0,p/kWh,Agile adder 16:00-19:00,Octopus Energy
+agile_cap_p,100.0,p/kWh,Agile price cap,Octopus Energy
+wholesale_mean_p,8.0,p/kWh,Mean daily wholesale level of the synthetic price process,Gupta and Akhtar (2027) poster (synthetic)
+wholesale_day_cv,0.35,-,Coefficient of variation of the daily wholesale level,Gupta and Akhtar (2027) poster (synthetic)
+wholesale_slot_cv,0.10,-,Half-hourly noise on the synthetic wholesale shape,Assumption (synthetic)
+negative_night_share,0.18,-,Share of days with negative overnight wholesale prices,Gupta and Akhtar (2027) poster (synthetic)
+na_peak_price_p,25.0,p/kWh,Network-aware base price at the background peak (sets C1),Assumption (matches static ToU peak rate)
+cpp_threshold,0.8,-,Headroom utilisation at which the first surcharge tier starts,Gupta and Akhtar (2027) poster
+cpp_tier_p,25.0,p/kWh,First surcharge tier,Gupta and Akhtar (2027) poster
+cpp_max_p,200.0,p/kWh,Second surcharge tier (utilisation >= 1),Gupta and Akhtar (2027) poster
+cpp_quantile,0.90,-,Quantile of the scenario ensemble used to assess utilisation,Gupta and Akhtar (2027) poster
+fp_damping,0.35,-,Damping of the fixed-point iteration,Gupta and Akhtar (2027) poster
+fp_scenarios,25,days,Scenario days per fixed-point round,Gupta and Akhtar (2027) poster
+fp_rounds,30,-,Fixed-point rounds,Gupta and Akhtar (2027) poster
+delay_default_s,600,s,Default maximum randomised delay,Electric Vehicles (Smart Charge Points) Regulations 2021 reg. 11(2)
+delay_max_s,1800,s,Largest randomised delay that can be configured remotely,Electric Vehicles (Smart Charge Points) Regulations 2021 reg. 11(1)
+dither_p,2.0,p/kWh,Half-width of the household-specific price dither,Assumption (swept in sensitivity)

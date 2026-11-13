@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite it as below."
+title: "Mitigating Smart-Charging Rebound Peaks Under Network-Aware Dynamic Pricing on Low-Voltage Feeders"
+authors:
+  - family-names: Gupta
+    given-names: Anay
+    affiliation: Imperial College London
+year: 2026
+license: MIT
+repository-code: "https://github.com/RISKMASTER16/evalgopricing"

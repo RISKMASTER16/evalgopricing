@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+.DS_Store
+*.egg-info/
+build/
