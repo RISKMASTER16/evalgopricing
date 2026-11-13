@@ -200,7 +200,7 @@ along with the earlier tariff it builds on:
 ## Acknowledgements
 
 This research was funded by the Laidlaw Foundation through a Laidlaw
-Scholarship. Thanks to Zohaib Akhtar for his guidance throughout this work.
+Scholarship. Thanks to Dr Zohaib Akhtar for his guidance throughout this work.
 
 ## Licence
 
